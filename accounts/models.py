@@ -39,7 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField('active',default=False)
     is_superuser = models.BooleanField('superuser',default=False)
     date_joined = models.DateTimeField('date joined',default=timezone.now)
-
+    is_public = models.BooleanField('public',default=True)
     USERNAME_FIELD = 'email'
     objects = UserManager()
     def __str__(self):
