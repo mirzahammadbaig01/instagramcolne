@@ -4,5 +4,8 @@ class Story(models.Model):
   user = models.ForeignKey(User,on_delete=models.CASCADE)
   story_images=models.FileField(upload_to="stories/",max_length=250,null=False)
   timestamp = models.DateTimeField(auto_now_add=True, db_index=True)
+  def __str__(self):
+      return str(self.timestamp)
+
 
 # Create your models here.
